@@ -7,7 +7,7 @@ const mw = {
   auth: (req,res,next)=>{
     try {
       const url = req.originalUrl || '/';
-      const whiteList = dotenv.WHITE_LIST ? dotenv.WHITE_LIST.split(',') : [];
+      // const whiteList = dotenv.WHITE_LIST ? dotenv.WHITE_LIST.split(',') : [];
 
       console.info(moment().format("YYYY-MM-DD HH:mm:ss"), req.method, url);
       // if (whiteList.some(path => url.includes(path)) || url == '/')
