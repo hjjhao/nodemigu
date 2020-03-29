@@ -10,7 +10,7 @@ const mw = {
       const whiteList = dotenv.WHITE_LIST ? dotenv.WHITE_LIST.split(',') : [];
 
       console.info(moment().format("YYYY-MM-DD HH:mm:ss"), req.method, url);
-      if (whiteList.some(path => url.includes(path)) || url == '/')
+      // if (whiteList.some(path => url.includes(path)) || url == '/')
           return next();
 
     } catch (error) {
