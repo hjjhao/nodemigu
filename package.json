@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "express-form-data": "^2.0.12",
     "moment": "^2.24.0",
+    "qs": "^6.9.3",
     "shortid": "^2.2.15"
   }
 }

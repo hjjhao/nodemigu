@@ -1,19 +1,16 @@
 const express = require("express");
 const router = express.Router();
 const helpers = require("./../helpers");
+const qs = require("qs");
+const axios = require("axios");
 
 /**
  * POST Request
  * search
  */
-router.get("/search", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const { keyword } = req.query;
-    const options = {
-      pgc: 1,
-      rows: 20,
-      type: 2
-    };
     if (!keyword) {
       return helpers.common.response(
         res,
@@ -22,8 +19,20 @@ router.get("/search", async (req, res) => {
         400
       );
     }
+    const options = {
+      keyword,
+      pgc: 1,
+      rows: 20,
+      type: 2
+    };
+    const headers = {
+      referer: "http://music.migu.cn/v3"
+    };
+    const searchUrl = `http://m.music.migu.cn/migu/remoting/scr_search_tag?`;
+    const url = searchUrl + qs.stringify(options);
+    const {data} = await axios.get(url, { headers, withCredentials: true });
 
-    return helpers.common.response(res, "succeed", users[0], 200);
+    return helpers.common.response(res, "succeed", data, 200);
   } catch (error) {
     console.error(error);
     return helpers.common.response(res, "failed", error, 500);

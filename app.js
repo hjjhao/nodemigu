@@ -24,10 +24,10 @@ mws.forEach(key => app.use(middleWare[key]));
 app.all("/", (req, res) => {
   return res.status(200).send("Server is running.");
 });
-
 controllers.forEach(controller => {
   app.use(controller.path, controller.route);
 });
-app.listen(process.env.PORT || 3300, () => {
-  console.log(`Server is running on ${process.env.PORT || 3300}.`);
+const port = process.env.PORT || 3800;
+app.listen(port, () => {
+  console.log(`Server is running on ${process.env.PORT || 3800}.`);
 });
