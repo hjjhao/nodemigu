@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "s": "nodemon app.js --ignore logs/",
-    "start": "nodemon app.js --ignore logs/"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

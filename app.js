@@ -24,7 +24,7 @@ app.all("/", (req, res) => {
 controllers.forEach(controller => {
   app.use(controller.path, controller.route);
 });
-const port = process.env.PORT || 3800;
+const port = process.env.PORT || 3700;
 app.listen(port, () => {
-  console.log(`Server is running on ${process.env.PORT || 3800}.`);
+  console.log(`Server is running on ${process.env.PORT || 3700}.`);
 });
