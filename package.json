@@ -1,0 +1,29 @@
+{
+  "name": "miguapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "s": "nodemon app.js --ignore logs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hjjhao/nodemigu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hjjhao/nodemigu/issues"
+  },
+  "homepage": "https://github.com/hjjhao/nodemigu#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-form-data": "^2.0.12",
+    "moment": "^2.24.0",
+    "shortid": "^2.2.15"
+  }
+}
