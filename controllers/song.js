@@ -25,10 +25,9 @@ router.get("/", async (req, res) => {
     const songUrl = `http://m.music.migu.cn/migu/remoting/cms_detail_tag`;
     const url = songUrl + `?cpid=${cid}`;
 
-    const data = await axios.get(url, { headers, withCredentials: true });
-    console.log(data);
+    const {data} = await axios.get(url, { headers, withCredentials: true });
 
-    return helpers.common.response(res, "succeed", data.data, 200);
+    return helpers.common.response(res, "succeed", data, 200);
   } catch (error) {
     console.error(error);
     return helpers.common.response(res, "failed", error, 500);

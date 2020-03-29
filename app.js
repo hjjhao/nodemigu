@@ -3,9 +3,6 @@ const dotenv = require("dotenv").config().parsed;
 const controllers = require("./controllers");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const fs = require("fs");
-const formData = require("express-form-data");
-const os = require("os");
 const middleWare = require("./middleware");
 const app = express();
 
